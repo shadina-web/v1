@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend-Frontend Connection Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .test-section h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.online {
+            background: #28a745;
+            color: white;
+        }
+        .status.offline {
+            background: #dc3545;
+            color: white;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Backend-Frontend Connection Test</h1>
+        
+        <div class="test-section">
+            <h3>1️⃣ Backend Health Check <span class="status" id="backendStatus">Testing...</span></h3>
+            <button onclick="testBackendHealth()">Test Backend Connection</button>
+            <div id="healthResult"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>2️⃣ Register New User</h3>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" id="registerName" value="Test User" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="registerEmail" value="test@example.com" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" id="registerPassword" value="password123" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+                <label>Phone:</label>
+                <input type="text" id="registerPhone" value="+1234567890" placeholder="Enter phone">
+            </div>
+            <button onclick="testRegister()">Register User</button>
+            <div id="registerResult"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>3️⃣ Login Test</h3>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="loginEmail" value="test@example.com" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" id="loginPassword" value="password123" placeholder="Enter password">
+            </div>
+            <button onclick="testLogin()">Login</button>
+            <div id="loginResult"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>4️⃣ Get Skills (Protected Endpoint)</h3>
+            <button onclick="testGetSkills()">Get All Skills</button>
+            <div id="skillsResult"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8082/api';
+        let authToken = null;
+
+        // Test backend health
+        async function testBackendHealth() {
+            const resultDiv = document.getElementById('healthResult');
+            const statusSpan = document.getElementById('backendStatus');
+            resultDiv.innerHTML = '<div class="result info">Testing connection...</div>';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/skills`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    statusSpan.className = 'status online';
+                    statusSpan.textContent = 'Online';
+                    resultDiv.innerHTML = `<div class="result success">✅ Backend is running!\nStatus: ${response.status} ${response.statusText}\nEndpoint: ${API_BASE_URL}</div>`;
+                } else {
+                    statusSpan.className = 'status offline';
+                    statusSpan.textContent = 'Error';
+                    resultDiv.innerHTML = `<div class="result error">⚠️ Backend returned error\nStatus: ${response.status} ${response.statusText}</div>`;
+                }
+            } catch (error) {
+                statusSpan.className = 'status offline';
+                statusSpan.textContent = 'Offline';
+                resultDiv.innerHTML = `<div class="result error">❌ Cannot connect to backend\nError: ${error.message}\n\nMake sure backend is running on port 8082</div>`;
+            }
+        }
+
+        // Test user registration
+        async function testRegister() {
+            const resultDiv = document.getElementById('registerResult');
+            resultDiv.innerHTML = '<div class="result info">Registering user...</div>';
+            
+            const userData = {
+                name: document.getElementById('registerName').value,
+                email: document.getElementById('registerEmail').value,
+                password: document.getElementById('registerPassword').value,
+                phone: document.getElementById('registerPhone').value,
+                role: 'USER'
+            };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultDiv.innerHTML = `<div class="result success">✅ User registered successfully!\n\nUser ID: ${data.id}\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nRole: ${data.role}</div>`;
+                } else {
+                    resultDiv.innerHTML = `<div class="result error">❌ Registration failed\nStatus: ${response.status}\nError: ${JSON.stringify(data, null, 2)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">❌ Network error\n${error.message}</div>`;
+            }
+        }
+
+        // Test login
+        async function testLogin() {
+            const resultDiv = document.getElementById('loginResult');
+            resultDiv.innerHTML = '<div class="result info">Logging in...</div>';
+            
+            const credentials = {
+                email: document.getElementById('loginEmail').value,
+                password: document.getElementById('loginPassword').value
+            };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(credentials)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    authToken = data.token;
+                    resultDiv.innerHTML = `<div class="result success">✅ Login successful!\n\nToken: ${data.token.substring(0, 50)}...\nUser: ${data.user.name}\nEmail: ${data.user.email}\n\n🔐 Token saved for protected endpoint tests</div>`;
+                } else {
+                    resultDiv.innerHTML = `<div class="result error">❌ Login failed\nStatus: ${response.status}\nError: ${JSON.stringify(data, null, 2)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">❌ Network error\n${error.message}</div>`;
+            }
+        }
+
+        // Test getting skills (may require auth)
+        async function testGetSkills() {
+            const resultDiv = document.getElementById('skillsResult');
+            resultDiv.innerHTML = '<div class="result info">Fetching skills...</div>';
+            
+            try {
+                const headers = {
+                    'Content-Type': 'application/json'
+                };
+                
+                if (authToken) {
+                    headers['Authorization'] = `Bearer ${authToken}`;
+                }
+
+                const response = await fetch(`${API_BASE_URL}/skills`, {
+                    method: 'GET',
+                    headers: headers
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    if (Array.isArray(data) && data.length > 0) {
+                        const skillsList = data.map((skill, index) => 
+                            `${index + 1}. ${skill.skillName || skill.name}\n   Description: ${skill.description || 'N/A'}\n   ID: ${skill.id}`
+                        ).join('\n\n');
+                        resultDiv.innerHTML = `<div class="result success">✅ Found ${data.length} skills:\n\n${skillsList}</div>`;
+                    } else {
+                        resultDiv.innerHTML = `<div class="result success">✅ No skills found (database is empty)\n\nYou can add skills through the UI or H2 console</div>`;
+                    }
+                } else {
+                    resultDiv.innerHTML = `<div class="result error">❌ Failed to fetch skills\nStatus: ${response.status}\nError: ${JSON.stringify(data, null, 2)}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="result error">❌ Network error\n${error.message}</div>`;
+            }
+        }
+
+        // Auto-test backend health on page load
+        window.onload = function() {
+            testBackendHealth();
+        };
+    </script>
+</body>
+</html>

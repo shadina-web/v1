@@ -1,0 +1,958 @@
+/* ============================================ */
+/* OCEAN MERMAID THEME */
+/* Magical Underwater Color Palette */
+/* ============================================ */
+
+:root {
+  /* PRIMARY OCEAN BLUES - Deep to Light */
+  --ocean-deep: #006B8F;        /* Deep ocean blue - headers, emphasis */
+  --ocean-medium: #0097B2;      /* Medium ocean - primary actions */
+  --ocean-bright: #00B4D8;      /* Bright ocean - highlights */
+  --ocean-light: #90E0EF;       /* Light ocean - soft accents */
+  --ocean-whisper: #CAF0F8;     /* Ocean whisper - very light backgrounds */
+  
+  /* AQUA & TURQUOISE - Magical Waters */
+  --aqua-vibrant: #06D6A0;      /* Vibrant aqua - success, active */
+  --aqua-soft: #7FDEBD;         /* Soft aqua - gentle accents */
+  --turquoise-bright: #40E0D0;  /* Bright turquoise - highlights */
+  --turquoise-calm: #48CAE4;    /* Calm turquoise - backgrounds */
+  --turquoise-mist: #ADE8F4;    /* Turquoise mist - subtle */
+  
+  /* TEAL - Serene Depths */
+  --teal-deep: #008080;         /* Deep teal - strong accents */
+  --teal-medium: #20B2AA;       /* Medium teal - buttons */
+  --teal-light: #5FCDCD;        /* Light teal - hover states */
+  --teal-pastel: #B2E6E6;       /* Pastel teal - soft backgrounds */
+  
+  /* SEA GREENS - Underwater Flora */
+  --seagreen-vibrant: #3DDC84;  /* Vibrant sea green - success */
+  --seagreen-soft: #7FE5A8;     /* Soft sea green - gentle */
+  --seagreen-pastel: #B2F5D8;   /* Pastel sea green - backgrounds */
+  --seagreen-mint: #D4F4E7;     /* Mint green - very light */
+  
+  /* LAVENDER & CORAL - Magical Accents */
+  --lavender-soft: #C5A3E0;     /* Soft lavender - mystical accent */
+  --lavender-light: #E0D4F0;    /* Light lavender - backgrounds */
+  --lavender-mist: #F0E8F8;     /* Lavender mist - subtle */
+  --coral-pink: #FF9999;        /* Coral pink - warm accent */
+  --coral-soft: #FFBABA;        /* Soft coral - gentle */
+  --coral-blush: #FFE0E0;       /* Coral blush - backgrounds */
+  
+  /* NAVY & CHARCOAL - Text Colors */
+  --navy-deep: #001F3F;         /* Deep navy - primary text */
+  --navy-medium: #003D5C;       /* Medium navy - secondary text */
+  --charcoal-dark: #2C3E50;     /* Dark charcoal - body text */
+  --charcoal-medium: #34495E;   /* Medium charcoal - muted text */
+  --slate-dark: #455A64;        /* Dark slate - subtle text */
+  
+  /* PEARL & SHELL - Light Backgrounds */
+  --pearl-white: #F8FEFF;       /* Pearl white - main background */
+  --shell-cream: #FFF9F5;       /* Shell cream - card backgrounds */
+  --foam-white: #FFFFFF;        /* Pure white - clean surfaces */
+  --mist-blue: #F0F9FF;         /* Blue mist - subtle sections */
+  
+  /* GRADIENTS - Magical Transitions */
+  --gradient-ocean: linear-gradient(135deg, #48CAE4 0%, #006B8F 100%);
+  --gradient-aqua: linear-gradient(135deg, #90E0EF 0%, #00B4D8 100%);
+  --gradient-teal: linear-gradient(135deg, #B2E6E6 0%, #20B2AA 100%);
+  --gradient-mermaid: linear-gradient(135deg, #CAF0F8 0%, #48CAE4 50%, #006B8F 100%);
+  --gradient-magical: linear-gradient(135deg, #E0D4F0 0%, #90E0EF 50%, #FF9999 100%);
+  --gradient-coral: linear-gradient(135deg, #FFE0E0 0%, #FF9999 100%);
+  
+  /* SHADOWS - Underwater Depth */
+  --shadow-soft: 0 2px 8px rgba(0, 107, 143, 0.08);
+  --shadow-medium: 0 4px 16px rgba(0, 107, 143, 0.12);
+  --shadow-large: 0 8px 24px rgba(0, 107, 143, 0.16);
+  --shadow-glow: 0 0 20px rgba(72, 202, 228, 0.3);
+  
+  /* FUNCTIONAL COLORS - Ocean Theme */
+  --success-ocean: #06D6A0;     /* Success - vibrant aqua */
+  --warning-ocean: #FFB347;     /* Warning - coral orange */
+  --error-ocean: #FF6B6B;       /* Error - coral red */
+  --info-ocean: #48CAE4;        /* Info - calm turquoise */
+}
+
+/* ============================================ */
+/* OCEAN MERMAID UTILITY CLASSES */
+/* ============================================ */
+
+/* Background Colors - Ocean Blues */
+.bg-ocean-deep { background-color: var(--ocean-deep); }
+.bg-ocean-medium { background-color: var(--ocean-medium); }
+.bg-ocean-bright { background-color: var(--ocean-bright); }
+.bg-ocean-light { background-color: var(--ocean-light); }
+.bg-ocean-whisper { background-color: var(--ocean-whisper); }
+
+/* Background Colors - Aqua & Turquoise */
+.bg-aqua-vibrant { background-color: var(--aqua-vibrant); }
+.bg-aqua-soft { background-color: var(--aqua-soft); }
+.bg-turquoise-bright { background-color: var(--turquoise-bright); }
+.bg-turquoise-calm { background-color: var(--turquoise-calm); }
+.bg-turquoise-mist { background-color: var(--turquoise-mist); }
+
+/* Background Colors - Teal */
+.bg-teal-deep { background-color: var(--teal-deep); }
+.bg-teal-medium { background-color: var(--teal-medium); }
+.bg-teal-light { background-color: var(--teal-light); }
+.bg-teal-pastel { background-color: var(--teal-pastel); }
+
+/* Background Colors - Sea Green */
+.bg-seagreen-vibrant { background-color: var(--seagreen-vibrant); }
+.bg-seagreen-soft { background-color: var(--seagreen-soft); }
+.bg-seagreen-pastel { background-color: var(--seagreen-pastel); }
+.bg-seagreen-mint { background-color: var(--seagreen-mint); }
+
+/* Background Colors - Lavender & Coral */
+.bg-lavender-soft { background-color: var(--lavender-soft); }
+.bg-lavender-light { background-color: var(--lavender-light); }
+.bg-coral-pink { background-color: var(--coral-pink); }
+.bg-coral-soft { background-color: var(--coral-soft); }
+.bg-coral-blush { background-color: var(--coral-blush); }
+
+/* Background Colors - Light Surfaces */
+.bg-pearl-white { background-color: var(--pearl-white); }
+.bg-shell-cream { background-color: var(--shell-cream); }
+.bg-mist-blue { background-color: var(--mist-blue); }
+
+/* Gradient Backgrounds */
+.bg-gradient-ocean { background: var(--gradient-ocean); }
+.bg-gradient-aqua { background: var(--gradient-aqua); }
+.bg-gradient-teal { background: var(--gradient-teal); }
+.bg-gradient-mermaid { background: var(--gradient-mermaid); }
+.bg-gradient-magical { background: var(--gradient-magical); }
+.bg-gradient-coral { background: var(--gradient-coral); }
+
+/* Text Colors - Dark for Contrast */
+.text-navy-deep { color: var(--navy-deep); }
+.text-navy-medium { color: var(--navy-medium); }
+.text-charcoal-dark { color: var(--charcoal-dark); }
+.text-charcoal-medium { color: var(--charcoal-medium); }
+.text-slate-dark { color: var(--slate-dark); }
+
+/* Text Colors - Ocean Tones */
+.text-ocean-deep { color: var(--ocean-deep); }
+.text-ocean-medium { color: var(--ocean-medium); }
+.text-ocean-bright { color: var(--ocean-bright); }
+.text-aqua-vibrant { color: var(--aqua-vibrant); }
+.text-teal-deep { color: var(--teal-deep); }
+.text-teal-medium { color: var(--teal-medium); }
+
+/* Border Colors */
+.border-ocean-deep { border-color: var(--ocean-deep); }
+.border-ocean-bright { border-color: var(--ocean-bright); }
+.border-ocean-light { border-color: var(--ocean-light); }
+.border-turquoise-calm { border-color: var(--turquoise-calm); }
+.border-teal-medium { border-color: var(--teal-medium); }
+.border-teal-pastel { border-color: var(--teal-pastel); }
+
+/* Shadow Utilities */
+.shadow-ocean-soft { box-shadow: var(--shadow-soft); }
+.shadow-ocean-medium { box-shadow: var(--shadow-medium); }
+.shadow-ocean-large { box-shadow: var(--shadow-large); }
+.shadow-ocean-glow { box-shadow: var(--shadow-glow); }
+
+/* Hover Effects */
+.hover\:bg-ocean-medium:hover { background-color: var(--ocean-medium); }
+.hover\:bg-ocean-deep:hover { background-color: var(--ocean-deep); }
+.hover\:bg-teal-medium:hover { background-color: var(--teal-medium); }
+.hover\:bg-aqua-vibrant:hover { background-color: var(--aqua-vibrant); }
+.hover\:shadow-ocean-glow:hover { box-shadow: var(--shadow-glow); }
+.hover\:transform-ocean:hover { transform: translateY(-4px); }
+
+/* Ocean Mermaid Buttons */
+.btn-ocean-primary {
+  background: var(--gradient-aqua);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-ocean-primary:hover {
+  background: var(--gradient-ocean);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-ocean-secondary {
+  background: var(--gradient-teal);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-ocean-secondary:hover {
+  background-color: var(--teal-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-large);
+}
+
+.btn-ocean-outline {
+  background: transparent;
+  color: var(--ocean-deep);
+  padding: 12px 32px;
+  border-radius: 25px;
+  border: 2px solid var(--ocean-bright);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-ocean-outline:hover {
+  background: var(--ocean-whisper);
+  border-color: var(--ocean-deep);
+  color: var(--ocean-deep);
+}
+
+.btn-ocean-coral {
+  background: var(--gradient-coral);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-ocean-coral:hover {
+  background-color: var(--coral-pink);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-large);
+}
+
+/* Ocean Mermaid Cards */
+.card-ocean {
+  background: var(--shell-cream);
+  border: 2px solid var(--ocean-light);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease;
+}
+
+.card-ocean:hover {
+  border-color: var(--ocean-bright);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-6px);
+}
+
+.card-ocean-gradient {
+  background: var(--gradient-mermaid);
+  border: none;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-large);
+  color: white;
+}
+
+.card-ocean-pearl {
+  background: var(--pearl-white);
+  border: 3px solid var(--turquoise-calm);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease;
+}
+
+.card-ocean-pearl:hover {
+  border-color: var(--ocean-bright);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-6px);
+}
+
+/* Ocean Badges */
+.badge-ocean-success {
+  background: var(--aqua-vibrant);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-soft);
+}
+
+.badge-ocean-info {
+  background: var(--turquoise-calm);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-soft);
+}
+
+.badge-ocean-coral {
+  background: var(--coral-pink);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-soft);
+}
+
+.badge-ocean-lavender {
+  background: var(--lavender-soft);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Ocean Divider */
+.divider-ocean {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--turquoise-calm), transparent);
+  margin: 32px 0;
+}
+
+/* Ocean Section */
+.section-ocean {
+  background: var(--gradient-mermaid);
+  padding: 80px 0;
+  color: white;
+}
+
+.section-ocean-light {
+  background: var(--mist-blue);
+  padding: 60px 0;
+}
+
+/* RURAL FARMING COMMUNITY COLOR THEME */
+/* Natural, High-Contrast Colors for Non-Tech Users */
+/* ============================================ */
+
+:root {
+  /* PRIMARY COLORS - Earth & Soil */
+  --soil-rich: #3E2723;        /* Rich dark soil - primary text, headers */
+  --soil-medium: #5D4037;      /* Medium soil - secondary text */
+  --soil-light: #8D6E63;       /* Light soil - disabled text, borders */
+  --earth-brown: #6D4C41;      /* Earth brown - backgrounds, sections */
+  --clay-orange: #D84315;      /* Clay/terracotta - alerts, warnings */
+  
+  /* SECONDARY COLORS - Grass & Crops */
+  --grass-vibrant: #2E7D32;    /* Vibrant grass - success, active states */
+  --grass-fresh: #43A047;      /* Fresh grass - buttons, links */
+  --grass-meadow: #66BB6A;     /* Meadow green - hover states */
+  --crop-golden: #F9A825;      /* Golden wheat - highlights, badges */
+  --crop-corn: #FBC02D;        /* Corn yellow - secondary highlights */
+  
+  /* ACCENT COLORS - Sky & Water */
+  --sky-clear: #1976D2;        /* Clear sky blue - info, links */
+  --sky-bright: #42A5F5;       /* Bright sky - hover, active */
+  --sky-dawn: #90CAF9;         /* Dawn sky - light accents */
+  --water-pond: #0097A7;       /* Pond water - secondary info */
+  
+  /* VIBRANT BLUE PALETTE - Rich & Energetic */
+  --blue-electric: #2196F3;    /* Electric blue - vibrant primary */
+  --blue-ocean: #0288D1;       /* Deep ocean blue - strong accent */
+  --blue-azure: #039BE5;       /* Azure blue - bright highlights */
+  --blue-sky: #03A9F4;         /* Sky blue - cheerful accent */
+  --blue-cerulean: #00BCD4;    /* Cerulean - cyan-blue mix */
+  --blue-light: #4FC3F7;       /* Light blue - soft backgrounds */
+  --blue-powder: #81D4FA;      /* Powder blue - very light accent */
+  --blue-ice: #B3E5FC;         /* Ice blue - subtle backgrounds */
+  --blue-midnight: #1565C0;    /* Midnight blue - dark accent */
+  --blue-royal: #1E88E5;       /* Royal blue - classic vibrant */
+  --blue-cobalt: #2962FF;      /* Cobalt blue - intense accent */
+  --blue-sapphire: #1976D2;    /* Sapphire blue - jewel tone */
+  --blue-pacific: #0277BD;     /* Pacific blue - deep sea */
+  --blue-caribbean: #00ACC1;   /* Caribbean blue - tropical */
+  --blue-lagoon: #00E5FF;      /* Lagoon blue - bright cyan */
+  --blue-frost: #E1F5FE;       /* Frost blue - very pale background */
+  
+  /* WOOD & NATURAL MATERIALS */
+  --wood-oak: #8D6E63;         /* Oak wood - borders, dividers */
+  --wood-pine: #A1887F;        /* Pine wood - backgrounds */
+  --wood-bark: #5D4037;        /* Tree bark - dark elements */
+  --straw-hay: #F4E1C1;        /* Hay/straw - light backgrounds */
+  --grain-wheat: #EFEBE9;      /* Wheat grain - card backgrounds */
+  
+  /* NEUTRAL BACKGROUNDS */
+  --parchment: #FFF8E1;        /* Parchment - page background */
+  --canvas: #FFFBF0;           /* Canvas - clean white alternative */
+  --sand: #F5F5DC;             /* Sand - subtle background */
+  --stone-light: #ECEFF1;      /* Light stone - panels */
+  --stone-dark: #90A4AE;       /* Dark stone - disabled elements */
+  
+  /* FUNCTIONAL COLORS - High Contrast */
+  --success-green: #2E7D32;    /* Success messages, completed */
+  --warning-orange: #EF6C00;   /* Warnings, pending actions */
+  --error-red: #C62828;        /* Errors, critical alerts */
+  --info-blue: #1565C0;        /* Information, hints */
+  
+  /* TEXT COLORS - Maximum Readability */
+  --text-primary: #212121;     /* Primary text - black-brown */
+  --text-secondary: #424242;   /* Secondary text */
+  --text-muted: #757575;       /* Muted text */
+  --text-inverse: #FFFFFF;     /* White text on dark backgrounds */
+  
+  /* INTERACTIVE ELEMENTS */
+  --button-primary: #2E7D32;   /* Primary button - grass green */
+  --button-primary-hover: #1B5E20; /* Darker on hover */
+  --button-secondary: #6D4C41; /* Secondary button - earth brown */
+  --button-secondary-hover: #4E342E; /* Darker on hover */
+  
+  /* BORDERS & DIVIDERS */
+  --border-strong: #5D4037;    /* Strong borders - soil medium */
+  --border-medium: #8D6E63;    /* Medium borders - wood */
+  --border-light: #D7CCC8;     /* Light borders - soft tan */
+  --divider: #BCAAA4;          /* Dividers between sections */
+  
+  /* SHADOWS - Natural Depth */
+  --shadow-soft: rgba(62, 39, 35, 0.08);
+  --shadow-medium: rgba(62, 39, 35, 0.15);
+  --shadow-strong: rgba(62, 39, 35, 0.25);
+  
+  /* STATUS INDICATORS - Clear & Obvious */
+  --status-active: #43A047;    /* Active/online - fresh grass */
+  --status-pending: #F9A825;   /* Pending - golden wheat */
+  --status-inactive: #757575;  /* Inactive - gray stone */
+  --status-complete: #2E7D32;  /* Complete - vibrant grass */
+}
+
+/* ============================================ */
+/* UTILITY CLASSES - FARMING THEME */
+/* ============================================ */
+
+/* Background Colors */
+.bg-soil-rich { background-color: var(--soil-rich); }
+.bg-soil-medium { background-color: var(--soil-medium); }
+.bg-soil-light { background-color: var(--soil-light); }
+.bg-earth-brown { background-color: var(--earth-brown); }
+
+.bg-grass-vibrant { background-color: var(--grass-vibrant); }
+.bg-grass-fresh { background-color: var(--grass-fresh); }
+.bg-grass-meadow { background-color: var(--grass-meadow); }
+
+.bg-sky-clear { background-color: var(--sky-clear); }
+.bg-sky-bright { background-color: var(--sky-bright); }
+
+/* Vibrant Blue Backgrounds */
+.bg-blue-electric { background-color: var(--blue-electric); }
+.bg-blue-ocean { background-color: var(--blue-ocean); }
+.bg-blue-azure { background-color: var(--blue-azure); }
+.bg-blue-sky { background-color: var(--blue-sky); }
+.bg-blue-cerulean { background-color: var(--blue-cerulean); }
+.bg-blue-light { background-color: var(--blue-light); }
+.bg-blue-powder { background-color: var(--blue-powder); }
+.bg-blue-ice { background-color: var(--blue-ice); }
+.bg-blue-midnight { background-color: var(--blue-midnight); }
+.bg-blue-royal { background-color: var(--blue-royal); }
+.bg-blue-cobalt { background-color: var(--blue-cobalt); }
+.bg-blue-sapphire { background-color: var(--blue-sapphire); }
+.bg-blue-pacific { background-color: var(--blue-pacific); }
+.bg-blue-caribbean { background-color: var(--blue-caribbean); }
+.bg-blue-lagoon { background-color: var(--blue-lagoon); }
+.bg-blue-frost { background-color: var(--blue-frost); }
+
+.bg-wood-oak { background-color: var(--wood-oak); }
+.bg-wood-pine { background-color: var(--wood-pine); }
+
+.bg-parchment { background-color: var(--parchment); }
+.bg-canvas { background-color: var(--canvas); }
+.bg-sand { background-color: var(--sand); }
+.bg-grain-wheat { background-color: var(--grain-wheat); }
+
+/* Text Colors */
+.text-soil-rich { color: var(--soil-rich); }
+.text-soil-medium { color: var(--soil-medium); }
+.text-grass-vibrant { color: var(--grass-vibrant); }
+.text-grass-fresh { color: var(--grass-fresh); }
+.text-sky-clear { color: var(--sky-clear); }
+.text-crop-golden { color: var(--crop-golden); }
+
+/* Vibrant Blue Text Colors */
+.text-blue-electric { color: var(--blue-electric); }
+.text-blue-ocean { color: var(--blue-ocean); }
+.text-blue-azure { color: var(--blue-azure); }
+.text-blue-sky { color: var(--blue-sky); }
+.text-blue-cerulean { color: var(--blue-cerulean); }
+.text-blue-light { color: var(--blue-light); }
+.text-blue-midnight { color: var(--blue-midnight); }
+.text-blue-royal { color: var(--blue-royal); }
+.text-blue-cobalt { color: var(--blue-cobalt); }
+.text-blue-sapphire { color: var(--blue-sapphire); }
+.text-blue-pacific { color: var(--blue-pacific); }
+.text-blue-caribbean { color: var(--blue-caribbean); }
+.text-blue-lagoon { color: var(--blue-lagoon); }
+
+/* Border Colors */
+.border-soil-medium { border-color: var(--border-strong); }
+.border-wood-oak { border-color: var(--border-medium); }
+.border-light { border-color: var(--border-light); }
+
+/* Vibrant Blue Borders */
+.border-blue-electric { border-color: var(--blue-electric); }
+.border-blue-ocean { border-color: var(--blue-ocean); }
+.border-blue-azure { border-color: var(--blue-azure); }
+.border-blue-sky { border-color: var(--blue-sky); }
+.border-blue-cerulean { border-color: var(--blue-cerulean); }
+.border-blue-light { border-color: var(--blue-light); }
+.border-blue-royal { border-color: var(--blue-royal); }
+.border-blue-sapphire { border-color: var(--blue-sapphire); }
+
+/* Hover States - Vibrant Blues */
+.hover\:bg-blue-electric:hover { background-color: var(--blue-electric); }
+.hover\:bg-blue-ocean:hover { background-color: var(--blue-ocean); }
+.hover\:bg-blue-azure:hover { background-color: var(--blue-azure); }
+.hover\:bg-blue-royal:hover { background-color: var(--blue-royal); }
+.hover\:text-blue-electric:hover { color: var(--blue-electric); }
+.hover\:text-blue-ocean:hover { color: var(--blue-ocean); }
+.hover\:text-blue-royal:hover { color: var(--blue-royal); }
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--button-primary);
+  color: var(--text-inverse);
+  border: 2px solid var(--button-primary);
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--button-primary-hover);
+  border-color: var(--button-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+.btn-secondary {
+  background-color: var(--button-secondary);
+  color: var(--text-inverse);
+  border: 2px solid var(--button-secondary);
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--button-secondary-hover);
+  border-color: var(--button-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* Status Badges */
+.status-active {
+  background-color: var(--status-active);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.status-pending {
+  background-color: var(--status-pending);
+  color: var(--soil-rich);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.status-complete {
+  background-color: var(--status-complete);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Cards */
+.card-farming {
+  background-color: var(--grain-wheat);
+  border: 2px solid var(--border-medium);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.card-farming:hover {
+  border-color: var(--grass-fresh);
+  box-shadow: 0 4px 16px var(--shadow-medium);
+  transform: translateY(-4px);
+}
+
+/* ============================================ */
+/* PRESENTABLE PINK COLOR DEFINITIONS */
+
+/* ============================================ */
+/* PINK & ROSE COLOR SCHEME */
+/* ============================================ */
+
+/* Page Background - Soft Pink */
+.from-pink-50 {
+  --tw-gradient-from: #fdf2f8 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(253 242 248 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-rose-50 {
+  --tw-gradient-to: rgb(255 241 242 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #fff1f2 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-white {
+  --tw-gradient-to: #ffffff var(--tw-gradient-to-position);
+}
+
+/* Navbar - Deep Pink Gradient */
+.from-pink-900 {
+  --tw-gradient-from: #831843 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(131 24 67 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-pink-800 {
+  --tw-gradient-to: rgb(157 23 77 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #9d174d var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-rose-800 {
+  --tw-gradient-to: #9f1239 var(--tw-gradient-to-position);
+}
+
+/* Hero Section - Pink Gradient */
+.from-pink-500 {
+  --tw-gradient-from: #ec4899 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(236 72 153 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-pink-600 {
+  --tw-gradient-to: rgb(219 39 119 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #db2777 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-rose-600 {
+  --tw-gradient-to: #e11d48 var(--tw-gradient-to-position);
+}
+
+/* Section Headers - Deep Pink */
+.from-pink-800 {
+  --tw-gradient-from: #9d174d var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(157 23 77 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-pink-900 {
+  --tw-gradient-to: #831843 var(--tw-gradient-to-position);
+}
+
+/* ============================================ */
+/* SOLID BACKGROUND COLORS - PINK PALETTE */
+/* ============================================ */
+
+.bg-white { background-color: #ffffff; }
+.bg-pink-50 { background-color: #fdf2f8; }
+.bg-pink-100 { background-color: #fce7f3; }
+.bg-pink-200 { background-color: #fbcfe8; }
+.bg-pink-300 { background-color: #f9a8d4; }
+.bg-pink-400 { background-color: #f472b6; }
+.bg-pink-500 { background-color: #ec4899; }
+.bg-pink-600 { background-color: #db2777; }
+.bg-pink-700 { background-color: #be185d; }
+.bg-pink-800 { background-color: #9d174d; }
+.bg-pink-900 { background-color: #831843; }
+
+/* Rose accent colors */
+.bg-rose-50 { background-color: #fff1f2; }
+.bg-rose-100 { background-color: #ffe4e6; }
+.bg-rose-200 { background-color: #fecdd3; }
+.bg-rose-500 { background-color: #f43f5e; }
+.bg-rose-600 { background-color: #e11d48; }
+.bg-rose-700 { background-color: #be123c; }
+.bg-rose-800 { background-color: #9f1239; }
+.bg-rose-900 { background-color: #881337; }
+
+/* Additional accent colors for variety */
+.bg-purple-500 { background-color: #a855f7; }
+.bg-purple-600 { background-color: #9333ea; }
+.bg-fuchsia-500 { background-color: #d946ef; }
+.bg-fuchsia-600 { background-color: #c026d3; }
+
+.bg-black { background-color: #000000; }
+
+/* ============================================ */
+/* TEXT COLORS - PINK PALETTE */
+/* ============================================ */
+
+.text-white { color: #ffffff !important; }
+.text-pink-50 { color: #fdf2f8 !important; }
+.text-pink-100 { color: #fce7f3 !important; }
+.text-pink-200 { color: #fbcfe8 !important; }
+.text-pink-300 { color: #f9a8d4 !important; }
+.text-pink-400 { color: #f472b6 !important; }
+.text-pink-500 { color: #ec4899 !important; }
+.text-pink-600 { color: #db2777 !important; }
+.text-pink-700 { color: #be185d !important; }
+.text-pink-800 { color: #9d174d !important; }
+.text-pink-900 { color: #831843 !important; }
+
+/* Rose Text */
+.text-rose-500 { color: #f43f5e !important; }
+.text-rose-600 { color: #e11d48 !important; }
+.text-rose-700 { color: #be123c !important; }
+.text-rose-800 { color: #9f1239 !important; }
+.text-rose-900 { color: #881337 !important; }
+
+/* Additional accent text colors */
+.text-purple-500 { color: #a855f7 !important; }
+.text-purple-600 { color: #9333ea !important; }
+.text-fuchsia-500 { color: #d946ef !important; }
+.text-fuchsia-600 { color: #c026d3 !important; }
+
+.text-black { color: #000000 !important; }
+
+/* ============================================ */
+/* BORDER COLORS - PINK PALETTE */
+/* ============================================ */
+
+.border-white { border-color: #ffffff; }
+.border-pink-100 { border-color: #fce7f3; }
+.border-pink-200 { border-color: #fbcfe8; }
+.border-pink-300 { border-color: #f9a8d4; }
+.border-pink-400 { border-color: #f472b6; }
+.border-pink-500 { border-color: #ec4899; }
+.border-pink-600 { border-color: #db2777; }
+.border-pink-700 { border-color: #be185d; }
+.border-pink-800 { border-color: #9d174d; }
+
+.border-rose-200 { border-color: #fecdd3; }
+.border-rose-300 { border-color: #fda4af; }
+.border-rose-500 { border-color: #f43f5e; }
+.border-rose-600 { border-color: #e11d48; }
+
+/* ============================================ */
+/* HOVER COLORS - PINK PALETTE */
+/* ============================================ */
+
+.hover\:bg-pink-50:hover { background-color: #fdf2f8; }
+.hover\:bg-pink-100:hover { background-color: #fce7f3; }
+.hover\:bg-pink-200:hover { background-color: #fbcfe8; }
+.hover\:bg-pink-600:hover { background-color: #db2777; }
+.hover\:bg-pink-700:hover { background-color: #be185d; }
+.hover\:bg-pink-800:hover { background-color: #9d174d; }
+
+.hover\:bg-rose-50:hover { background-color: #fff1f2; }
+.hover\:bg-rose-600:hover { background-color: #e11d48; }
+.hover\:bg-rose-700:hover { background-color: #be123c; }
+
+.hover\:text-pink-600:hover { color: #db2777; }
+.hover\:text-pink-700:hover { color: #be185d; }
+.hover\:text-rose-600:hover { color: #e11d48; }
+
+.hover\:border-pink-400:hover { border-color: #f472b6; }
+.hover\:border-pink-500:hover { border-color: #ec4899; }
+
+/* ============================================ */
+/* SHADOW COLORS - PINK PALETTE */
+/* ============================================ */
+
+.hover\:shadow-pink-500\/20:hover {
+  --tw-shadow-color: rgb(236 72 153 / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-pink-100 {
+  --tw-shadow-color: #fce7f3;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-pink-200 {
+  --tw-shadow-color: #fbcfe8;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+/* ============================================ */
+/* LEGACY COLORS - Updated to Pink Theme */
+/* ============================================ */
+
+/* Gradients for backwards compatibility */
+.from-indigo-500 {
+  --tw-gradient-from: #a855f7 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(168 85 247 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-purple-500 {
+  --tw-gradient-to: rgb(217 70 239 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #d946ef var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-pink-500 {
+  --tw-gradient-to: #ec4899 var(--tw-gradient-to-position);
+}
+
+/* Hero Section - Pink */
+.from-violet-500 {
+  --tw-gradient-from: #d946ef var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(217 70 239 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-fuchsia-500 {
+  --tw-gradient-to: rgb(236 72 153 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #ec4899 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+/* Navbar */
+.from-blue-600 {
+  --tw-gradient-from: #db2777 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(219 39 119 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-purple-600 {
+  --tw-gradient-to: rgb(190 24 93 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #be185d var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-pink-600 {
+  --tw-gradient-to: #db2777 var(--tw-gradient-to-position);
+}
+
+/* Card Backgrounds */
+.from-blue-400 {
+  --tw-gradient-from: #f472b6 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(244 114 182 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-cyan-400 {
+  --tw-gradient-to: #fbcfe8 var(--tw-gradient-to-position);
+}
+
+.from-pink-400 {
+  --tw-gradient-from: #f472b6 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(244 114 182 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-rose-400 {
+  --tw-gradient-to: #fb7185 var(--tw-gradient-to-position);
+}
+
+.from-orange-400 {
+  --tw-gradient-from: #fda4af var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(253 164 175 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-amber-400 {
+  --tw-gradient-to: #fecdd3 var(--tw-gradient-to-position);
+}
+
+/* Stats Section */
+.from-emerald-400 {
+  --tw-gradient-from: #fce7f3 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(252 231 243 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-teal-400 {
+  --tw-gradient-to: rgb(251 207 232 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #fbcfe8 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-cyan-400 {
+  --tw-gradient-to: #f9a8d4 var(--tw-gradient-to-position);
+}
+
+/* Section Headers */
+.from-blue-500 {
+  --tw-gradient-from: #ec4899 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(236 72 153 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-purple-500 {
+  --tw-gradient-to: #a855f7 var(--tw-gradient-to-position);
+}
+
+.from-fuchsia-500 {
+  --tw-gradient-from: #d946ef var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(217 70 239 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-violet-500 {
+  --tw-gradient-to: #c026d3 var(--tw-gradient-to-position);
+}
+
+/* ============================================ */
+/* LEGACY SOLID COLORS - Pink Theme */
+/* ============================================ */
+
+.bg-blue-700 { background-color: #be185d; }
+.bg-pink-700 { background-color: #be185d; }
+.bg-orange-700 { background-color: #db2777; }
+.bg-blue-900 { background-color: #831843; }
+.bg-pink-900 { background-color: #831843; }
+.bg-orange-900 { background-color: #881337; }
+
+/* Slate compatibility - map to pink tones */
+.bg-slate-50 { background-color: #fdf2f8; }
+.bg-slate-100 { background-color: #fce7f3; }
+.bg-slate-200 { background-color: #fbcfe8; }
+.bg-slate-800 { background-color: #9d174d; }
+.bg-slate-900 { background-color: #831843; }
+
+.text-slate-50 { color: #fdf2f8 !important; }
+.text-slate-100 { color: #fce7f3 !important; }
+.text-slate-600 { color: #9d174d !important; }
+.text-slate-700 { color: #831843 !important; }
+.text-slate-800 { color: #831843 !important; }
+.text-slate-900 { color: #2d1b1e !important; }
+
+/* ============================================ */
+/* LEGACY BORDER COLORS - Pink Theme */
+/* ============================================ */
+
+.border-blue-600 { border-color: #db2777; }
+.border-pink-600 { border-color: #db2777; }
+.border-orange-600 { border-color: #f472b6; }
+.border-pink-400 { border-color: #f472b6; }
+.border-orange-400 { border-color: #f9a8d4; }
+.border-indigo-600 { border-color: #9333ea; }
+
+.border-slate-200 { border-color: #fbcfe8; }
+.border-slate-300 { border-color: #f9a8d4; }

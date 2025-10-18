@@ -1,0 +1,193 @@
+{
+  "app_name": "SkillMitra",
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "offers": "Offers",
+    "requests": "Requests",
+    "messages": "Messages",
+    "profile": "Profile",
+    "login": "Login",
+    "signup": "Sign Up",
+    "logout": "Logout"
+  },
+  "hero": {
+    "badge": "Connecting Skilled Workers Across Villages in Kerala",
+    "subtitle": "Connect with verified skilled workers, offer your expertise, and build meaningful business relationships. SkillMitra is Kerala's trusted platform for",
+    "skilled_services": "skilled services",
+    "cta_find_workers": "Find Workers Near You",
+    "cta_browse": "Browse Services",
+    "join_text": "Join",
+    "skilled_workers": "skilled workers"
+  },
+  "features": {
+    "why_choose": "Why Choose SkillMitra?",
+    "tagline": "Skilled services marketplace you can trust",
+    "offer_skills": {
+      "title": "Offer Your Skills",
+      "description": "Showcase your expertise and connect with clients seeking skilled services",
+      "button": "View Offers"
+    },
+    "find_services": {
+      "title": "Find Services",
+      "description": "Post your requirements and hire verified skilled workers for your projects",
+      "button": "View Requests"
+    },
+    "build_reputation": {
+      "title": "Build Reputation",
+      "description": "Earn ratings and reviews to establish credibility in the marketplace",
+      "button": "Your Profile"
+    }
+  },
+  "stats": {
+    "active_workers": "Active Workers",
+    "services_listed": "Services Listed",
+    "projects_completed": "Projects Completed",
+    "average_rating": "Average Rating"
+  },
+  "platform": {
+    "title": "Powerful Platform Features",
+    "subtitle": "Everything you need to succeed in one place",
+    "dashboard": {
+      "title": "Dashboard",
+      "description": "Track your earnings, ratings, and activity in one place",
+      "button": "View Dashboard"
+    },
+    "messaging": {
+      "title": "Real-time Messaging",
+      "description": "Chat directly with clients and service providers",
+      "button": "Open Messages"
+    },
+    "booking": {
+      "title": "Smart Booking",
+      "description": "Schedule appointments with easy calendar integration",
+      "button": "Manage Bookings"
+    },
+    "payments": {
+      "title": "Secure Payments",
+      "description": "Multiple payment options with transaction tracking",
+      "button": "View Payments"
+    },
+    "reviews": {
+      "title": "Reviews & Ratings",
+      "description": "Build trust with verified reviews and ratings system",
+      "button": "See Reviews"
+    },
+    "search": {
+      "title": "Advanced Search",
+      "description": "Filter by skills, location, price, and ratings",
+      "button": "Try Search"
+    }
+  },
+  "cta": {
+    "title": "Join SkillMitra Today",
+    "description": "Connect with thousands of skilled workers and clients in your community. Start earning or find the help you need with our secure, feature-rich platform.",
+    "get_started": "Get Started Free",
+    "explore_services": "Explore Services"
+  },
+  "language": {
+    "select": "Select Language",
+    "english": "English",
+    "hindi": "हिन्दी (Hindi)",
+    "malayalam": "മലയാളം (Malayalam)"
+  },
+  "common": {
+    "contact": "Contact",
+    "view_profile": "View Profile",
+    "rating": "Rating",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "phone": "Phone Number",
+    "location": "Location",
+    "skills": "Skills",
+    "description": "Description",
+    "price": "Price",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "view_all": "View All",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to continue to SkillMitra",
+      "email_placeholder": "Enter your email",
+      "password_placeholder": "Enter your password",
+      "remember_me": "Remember me",
+      "forgot_password": "Forgot password?",
+      "signin_button": "Sign In",
+      "no_account": "Don't have an account?",
+      "signup_link": "Sign up here"
+    },
+    "signup": {
+      "title": "Create Account",
+      "subtitle": "Join SkillMitra and connect with skilled workers",
+      "name_placeholder": "Enter your full name",
+      "email_placeholder": "Enter your email",
+      "password_placeholder": "Create a password",
+      "phone_placeholder": "Enter your phone number",
+      "signup_button": "Create Account",
+      "have_account": "Already have an account?",
+      "login_link": "Sign in here",
+      "terms": "By signing up, you agree to our Terms of Service and Privacy Policy"
+    }
+  },
+  "offers": {
+    "title": "Service Offers",
+    "subtitle": "Browse available services from skilled workers",
+    "create_offer": "Create New Offer",
+    "no_offers": "No offers available",
+    "filter_by_skill": "Filter by Skill",
+    "filter_by_location": "Filter by Location",
+    "view_details": "View Details"
+  },
+  "requests": {
+    "title": "Service Requests",
+    "subtitle": "Find clients looking for your skills",
+    "create_request": "Post New Request",
+    "no_requests": "No requests available",
+    "filter_by_skill": "Filter by Skill",
+    "filter_by_location": "Filter by Location",
+    "view_details": "View Details"
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "overview": "Overview",
+    "earnings": "Total Earnings",
+    "active_jobs": "Active Jobs",
+    "completed_jobs": "Completed Jobs",
+    "pending_requests": "Pending Requests",
+    "recent_activity": "Recent Activity",
+    "quick_actions": "Quick Actions",
+    "view_profile": "View Profile",
+    "manage_offers": "Manage Offers",
+    "view_requests": "View Requests"
+  },
+  "messages": {
+    "title": "Messages",
+    "no_messages": "No messages yet",
+    "type_message": "Type a message...",
+    "send": "Send",
+    "search_conversations": "Search conversations"
+  },
+  "profile": {
+    "title": "My Profile",
+    "edit_profile": "Edit Profile",
+    "personal_info": "Personal Information",
+    "skills_expertise": "Skills & Expertise",
+    "work_history": "Work History",
+    "reviews": "Reviews",
+    "settings": "Settings"
+  }
+}

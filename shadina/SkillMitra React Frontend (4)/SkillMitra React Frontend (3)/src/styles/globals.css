@@ -1,0 +1,334 @@
+/* Tailwind CSS v4 custom variant - ignore linter warning */
+/* stylelint-disable-next-line at-rule-no-unknown */
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* ========================================= */
+  /* RUSTIC & NATURAL THEME FOR VILLAGE USERS */
+  /* ========================================= */
+  
+  /* Primary Colors - Earthy Browns (trustworthy, natural) */
+  --rustic-brown: #8B4513; /* Saddle Brown - primary earthy tone */
+  --rustic-brown-light: #A0522D; /* Sienna - lighter brown */
+  --rustic-brown-dark: #654321; /* Dark Brown - deep earth */
+  
+  /* Secondary Colors - Forest Greens (calming, growth) */
+  --rustic-green: #228B22; /* Forest Green - natural, trustworthy */
+  --rustic-green-light: #3CB371; /* Medium Sea Green - fresh */
+  --rustic-green-dark: #006400; /* Dark Green - deep forest */
+  
+  /* Accent Colors - Sky Blue (friendly, approachable) */
+  --rustic-blue: #87CEEB; /* Sky Blue - welcoming */
+  --rustic-blue-light: #B0E0E6; /* Powder Blue - soft */
+  --rustic-blue-dark: #4682B4; /* Steel Blue - reliable */
+  
+  /* Background Colors - Warm, Natural Tones */
+  --rustic-parchment: #F5F5DC; /* Beige/Parchment - main background */
+  --rustic-cream: #FFFDD0; /* Cream - lighter sections */
+  --rustic-white: #FAFAF8; /* Soft white with warmth */
+  --rustic-sand: #F4E4C1; /* Sand - warm tan backgrounds */
+  
+  /* Surface Colors - Muted Tans & Beiges (cards, containers) */
+  --rustic-tan: #D2B48C; /* Tan - card backgrounds */
+  --rustic-beige: #F5DEB3; /* Wheat - light surfaces */
+  --rustic-khaki: #E8D5B7; /* Khaki - muted containers */
+  --rustic-linen: #FAF0E6; /* Linen - very light surface */
+  
+  /* Text Colors - Natural, Readable */
+  --rustic-text-primary: #3E2723; /* Dark Brown - main text */
+  --rustic-text-secondary: #5D4037; /* Medium Brown - secondary text */
+  --rustic-text-tertiary: #795548; /* Lighter Brown - tertiary text */
+  --rustic-text-on-dark: #F5DEB3; /* Light Beige - text on dark backgrounds */
+  --rustic-text-muted: #8D6E63; /* Muted brown - disabled/subtle text */
+  
+  /* Border Colors - Earthy Tones */
+  --rustic-border-light: #D7CCC8; /* Very light brown */
+  --rustic-border-medium: #BCAAA4; /* Medium brown */
+  --rustic-border-dark: #A1887F; /* Darker brown */
+  
+  /* Status Colors - Natural Variants */
+  --rustic-success: #689F38; /* Olive Green - success */
+  --rustic-warning: #F57C00; /* Burnt Orange - warning */
+  --rustic-error: #C62828; /* Brick Red - error */
+  --rustic-info: #5DADE2; /* Light Blue - info */
+  
+  /* Shadows - Soft, Natural */
+  --rustic-shadow-sm: 0 1px 2px rgba(62, 39, 35, 0.1);
+  --rustic-shadow-md: 0 4px 6px rgba(62, 39, 35, 0.15);
+  --rustic-shadow-lg: 0 10px 15px rgba(62, 39, 35, 0.2);
+  
+  /* ========================================= */
+  /* MAPPED TO TAILWIND DESIGN SYSTEM */
+  /* ========================================= */
+  
+  /* Main Application Colors */
+  --background: var(--rustic-parchment);
+  --foreground: var(--rustic-text-primary);
+  --card: var(--rustic-white);
+  --card-foreground: var(--rustic-text-primary);
+  --popover: var(--rustic-white);
+  --popover-foreground: var(--rustic-text-primary);
+  
+  /* Primary - Earthy Brown */
+  --primary: var(--rustic-brown);
+  --primary-foreground: var(--rustic-white);
+  
+  /* Secondary - Natural Surface */
+  --secondary: var(--rustic-beige);
+  --secondary-foreground: var(--rustic-text-primary);
+  
+  /* Muted Backgrounds */
+  --muted: var(--rustic-linen);
+  --muted-foreground: var(--rustic-text-secondary);
+  
+  /* Accent - Sky Blue */
+  --accent: var(--rustic-blue);
+  --accent-foreground: var(--rustic-text-primary);
+  
+  /* Destructive - Brick Red */
+  --destructive: var(--rustic-error);
+  --destructive-foreground: var(--rustic-white);
+  
+  /* Borders & Inputs */
+  --border: var(--rustic-border-medium);
+  --input: transparent;
+  --input-background: var(--rustic-white);
+  --switch-background: var(--rustic-border-light);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--rustic-brown);
+  
+  /* Charts - Natural Palette */
+  --chart-1: var(--rustic-brown);
+  --chart-2: var(--rustic-green);
+  --chart-3: var(--rustic-blue);
+  --chart-4: var(--rustic-warning);
+  --chart-5: var(--rustic-success);
+  
+  --radius: 0.75rem;
+  
+  /* Sidebar - Rustic Theme */
+  --sidebar: var(--rustic-white);
+  --sidebar-foreground: var(--rustic-text-primary);
+  --sidebar-primary: var(--rustic-brown);
+  --sidebar-primary-foreground: var(--rustic-white);
+  --sidebar-accent: var(--rustic-linen);
+  --sidebar-accent-foreground: var(--rustic-text-primary);
+  --sidebar-border: var(--rustic-border-light);
+  --sidebar-ring: var(--rustic-brown);
+}
+
+.dark {
+  --background: #1a0b0e;
+  --foreground: #fce7f3;
+  --card: #2d1b1e;
+  --card-foreground: #fce7f3;
+  --popover: #2d1b1e;
+  --popover-foreground: #fce7f3;
+  --primary: #f472b6;
+  --primary-foreground: #1a0b0e;
+  --secondary: #4a1d2c;
+  --secondary-foreground: #fce7f3;
+  --muted: #3d1621;
+  --muted-foreground: #f9a8d4;
+  --accent: #831843;
+  --accent-foreground: #fce7f3;
+  --destructive: #f87171;
+  --destructive-foreground: #1a0b0e;
+  --border: #831843;
+  --input: #2d1b1e;
+  --ring: #ec4899;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #f472b6;
+  --chart-2: #ec4899;
+  --chart-3: #db2777;
+  --chart-4: #be185d;
+  --chart-5: #9f1239;
+  --sidebar: #2d1b1e;
+  --sidebar-foreground: #fce7f3;
+  --sidebar-primary: #f472b6;
+  --sidebar-primary-foreground: #1a0b0e;
+  --sidebar-accent: #4a1d2c;
+  --sidebar-accent-foreground: #fce7f3;
+  --sidebar-border: #831843;
+  --sidebar-ring: #ec4899;
+}
+
+/* Tailwind CSS v4 theme directive - ignore linter warning */
+/* stylelint-disable-next-line at-rule-no-unknown */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Tailwind CSS @layer and @apply directives - ignore linter warnings */
+/* stylelint-disable-next-line at-rule-no-unknown */
+@layer base {
+  * {
+    /* stylelint-disable-next-line at-rule-no-unknown */
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    /* stylelint-disable-next-line at-rule-no-unknown */
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* ========================================= */
+/* RUSTIC THEME UTILITY CLASSES */
+/* ========================================= */
+
+/* Background Utilities */
+.bg-rustic-brown { background-color: var(--rustic-brown) !important; }
+.bg-rustic-green { background-color: var(--rustic-green) !important; }
+.bg-rustic-blue { background-color: var(--rustic-blue) !important; }
+.bg-rustic-parchment { background-color: var(--rustic-parchment) !important; }
+.bg-rustic-cream { background-color: var(--rustic-cream) !important; }
+.bg-rustic-sand { background-color: var(--rustic-sand) !important; }
+.bg-rustic-tan { background-color: var(--rustic-tan) !important; }
+.bg-rustic-beige { background-color: var(--rustic-beige) !important; }
+.bg-rustic-linen { background-color: var(--rustic-linen) !important; }
+
+/* Text Color Utilities */
+.text-rustic-brown { color: var(--rustic-brown) !important; }
+.text-rustic-green { color: var(--rustic-green) !important; }
+.text-rustic-blue { color: var(--rustic-blue) !important; }
+.text-rustic-primary { color: var(--rustic-text-primary) !important; }
+.text-rustic-secondary { color: var(--rustic-text-secondary) !important; }
+.text-rustic-tertiary { color: var(--rustic-text-tertiary) !important; }
+.text-rustic-on-dark { color: var(--rustic-text-on-dark) !important; }
+.text-rustic-muted { color: var(--rustic-text-muted) !important; }
+
+/* Border Utilities */
+.border-rustic { border-color: var(--rustic-border-medium) !important; }
+.border-rustic-light { border-color: var(--rustic-border-light) !important; }
+.border-rustic-dark { border-color: var(--rustic-border-dark) !important; }
+
+/* Shadow Utilities */
+.shadow-rustic-sm { box-shadow: var(--rustic-shadow-sm) !important; }
+.shadow-rustic-md { box-shadow: var(--rustic-shadow-md) !important; }
+.shadow-rustic-lg { box-shadow: var(--rustic-shadow-lg) !important; }
+
+/* Gradient Utilities */
+.bg-gradient-rustic-primary {
+  background: linear-gradient(135deg, var(--rustic-brown-light) 0%, var(--rustic-brown-dark) 100%) !important;
+}
+.bg-gradient-rustic-secondary {
+  background: linear-gradient(135deg, var(--rustic-green-light) 0%, var(--rustic-green-dark) 100%) !important;
+}
+.bg-gradient-rustic-accent {
+  background: linear-gradient(135deg, var(--rustic-blue-light) 0%, var(--rustic-blue-dark) 100%) !important;
+}
+.bg-gradient-rustic-warm {
+  background: linear-gradient(135deg, var(--rustic-cream) 0%, var(--rustic-sand) 100%) !important;
+}
+
+/* Status Color Utilities */
+.text-rustic-success { color: var(--rustic-success) !important; }
+.text-rustic-warning { color: var(--rustic-warning) !important; }
+.text-rustic-error { color: var(--rustic-error) !important; }
+.text-rustic-info { color: var(--rustic-info) !important; }
+
+.bg-rustic-success { background-color: var(--rustic-success) !important; }
+.bg-rustic-warning { background-color: var(--rustic-warning) !important; }
+.bg-rustic-error { background-color: var(--rustic-error) !important; }
+.bg-rustic-info { background-color: var(--rustic-info) !important; }

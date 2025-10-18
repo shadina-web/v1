@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H2 Database Connection Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .step {
+            margin-bottom: 30px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .step-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .connection-box {
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .connection-field {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .connection-field label {
+            font-weight: 600;
+            color: #555;
+            width: 120px;
+            flex-shrink: 0;
+        }
+        
+        .connection-field .value {
+            font-family: 'Courier New', monospace;
+            color: #667eea;
+            font-weight: bold;
+            flex: 1;
+            user-select: all;
+        }
+        
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 10px;
+            transition: background 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: #764ba2;
+        }
+        
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            border-left-color: #dc3545;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            margin: 20px 10px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        .query-box {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .query-box pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        
+        .copy-query {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+        
+        .copy-query:hover {
+            background: #764ba2;
+        }
+        
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #28a745;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗄️ H2 Database Connection</h1>
+            <p>SkillMitra Backend - In-Memory Database</p>
+        </div>
+        
+        <div class="content">
+            <div class="status">
+                <div class="status-dot"></div>
+                <strong>Backend Running:</strong> Port 8082
+            </div>
+            
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    Open H2 Console
+                </div>
+                <div style="text-align: center;">
+                    <a href="http://localhost:8082/h2-console" target="_blank" class="btn-primary">
+                        🚀 Open H2 Console
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    Use These Connection Settings
+                </div>
+                
+                <div class="connection-box">
+                    <div class="connection-field">
+                        <label>JDBC URL:</label>
+                        <span class="value" id="jdbc-url">jdbc:h2:mem:skillmitra</span>
+                        <button class="copy-btn" onclick="copyToClipboard('jdbc-url')">Copy</button>
+                    </div>
+                    
+                    <div class="connection-field">
+                        <label>User Name:</label>
+                        <span class="value" id="username">sa</span>
+                        <button class="copy-btn" onclick="copyToClipboard('username')">Copy</button>
+                    </div>
+                    
+                    <div class="connection-field">
+                        <label>Password:</label>
+                        <span class="value">(leave empty)</span>
+                    </div>
+                </div>
+                
+                <div class="alert">
+                    ⚠️ <strong>Important:</strong> Make sure to use <code>jdbc:h2:mem:skillmitra</code> exactly as shown. Do NOT use <code>jdbc:h2:~/test</code> or any file path!
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    Click "Connect" Button
+                </div>
+                <p style="color: #666; margin-left: 50px;">
+                    After entering the connection details, click the blue "Connect" button in the H2 Console.
+                </p>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    Try Sample Queries
+                </div>
+                
+                <p style="margin-left: 50px; margin-bottom: 15px;">After connecting, try these SQL queries:</p>
+                
+                <div style="margin-left: 50px;">
+                    <h4 style="margin-top: 20px;">View all users:</h4>
+                    <div class="query-box">
+                        <button class="copy-query" onclick="copyQuery('query1')">Copy</button>
+                        <pre id="query1">SELECT * FROM users;</pre>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">View all skills:</h4>
+                    <div class="query-box">
+                        <button class="copy-query" onclick="copyQuery('query2')">Copy</button>
+                        <pre id="query2">SELECT * FROM skills;</pre>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">Show all tables:</h4>
+                    <div class="query-box">
+                        <button class="copy-query" onclick="copyQuery('query3')">Copy</button>
+                        <pre id="query3">SHOW TABLES;</pre>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">Count registered users:</h4>
+                    <div class="query-box">
+                        <button class="copy-query" onclick="copyQuery('query4')">Copy</button>
+                        <pre id="query4">SELECT COUNT(*) as total_users FROM users;</pre>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">View user details with pretty formatting:</h4>
+                    <div class="query-box">
+                        <button class="copy-query" onclick="copyQuery('query5')">Copy</button>
+                        <pre id="query5">SELECT 
+    id, 
+    name, 
+    email, 
+    phone, 
+    location,
+    created_at
+FROM users 
+ORDER BY created_at DESC;</pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Troubleshooting -->
+            <div class="step">
+                <div class="step-title">
+                    🔧 Troubleshooting
+                </div>
+                
+                <div style="margin-left: 50px;">
+                    <div class="alert alert-error">
+                        <strong>Error: "Database not found"</strong><br>
+                        ➜ Make sure you're using <code>jdbc:h2:mem:skillmitra</code> (with <code>mem:</code>)<br>
+                        ➜ Check that backend is running on port 8082
+                    </div>
+                    
+                    <div class="alert alert-error" style="margin-top: 15px;">
+                        <strong>Error: "Connection refused"</strong><br>
+                        ➜ Backend is not running. Start it with: <code>mvn spring-boot:run</code>
+                    </div>
+                    
+                    <div class="alert alert-error" style="margin-top: 15px;">
+                        <strong>Error: "Wrong user or password"</strong><br>
+                        ➜ Username must be: <code>sa</code> (lowercase)<br>
+                        ➜ Password must be: empty (no password)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>SkillMitra Backend</strong> - H2 In-Memory Database</p>
+            <p>Backend: <a href="http://localhost:8082" target="_blank">http://localhost:8082</a> | 
+               Frontend: <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></p>
+        </div>
+    </div>
+    
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = element.nextElementSibling;
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied!';
+                btn.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#667eea';
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy: ' + err);
+            });
+        }
+        
+        function copyQuery(queryId) {
+            const element = document.getElementById(queryId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = element.parentElement.querySelector('.copy-query');
+                btn.textContent = '✓ Copied!';
+                btn.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.style.background = '#667eea';
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy: ' + err);
+            });
+        }
+        
+        // Auto-open H2 console after 2 seconds
+        setTimeout(() => {
+            if (confirm('Ready to open H2 Console?\n\nClick OK to open H2 Console in a new tab.')) {
+                window.open('http://localhost:8082/h2-console', '_blank');
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

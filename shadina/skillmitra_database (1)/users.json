@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Rajesh Kumar",
+    "village": "Rampur",
+    "phone": "+91 98765 43210",
+    "email": "rajesh@example.com",
+    "skillsOffered": [
+      "Plumbing",
+      "Electrical Work"
+    ],
+    "servicesNeeded": [
+      "Carpentry"
+    ],
+    "bio": "Experienced plumber and electrician with 10 years of experience.",
+    "rating": 4.5,
+    "ratingCount": 12
+  },
+  {
+    "name": "Lata Devi",
+    "village": "Greenfield",
+    "phone": "+91 91234 56789",
+    "email": "lata@example.com",
+    "skillsOffered": [
+      "Tailoring"
+    ],
+    "servicesNeeded": [
+      "Housekeeping"
+    ],
+    "bio": "Skilled tailor."
+  },
+  {
+    "name": "Vikram Singh",
+    "village": "Lakeside",
+    "phone": "+91 99887 66554",
+    "email": "vikram@example.com",
+    "skillsOffered": [
+      "Carpentry"
+    ],
+    "servicesNeeded": [
+      "Plumbing"
+    ],
+    "bio": "Carpenter."
+  },
+  {
+    "name": "Sita Sharma",
+    "village": "Rampur",
+    "phone": "+91 90123 45678",
+    "email": "sita@example.com",
+    "skillsOffered": [
+      "Cooking"
+    ],
+    "servicesNeeded": [
+      "Tutoring"
+    ],
+    "bio": "Home cook."
+  }
+]

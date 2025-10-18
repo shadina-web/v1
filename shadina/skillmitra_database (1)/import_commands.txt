@@ -1,0 +1,4 @@
+mongoimport --db skillmitra --collection users --file users.json --jsonArray
+mongoimport --db skillmitra --collection offers --file offers.json --jsonArray
+mongoimport --db skillmitra --collection requests --file requests.json --jsonArray
+mongoimport --db skillmitra --collection matches --file matches.json --jsonArray
